@@ -13,6 +13,7 @@ function getDataFromFiles(dir) {
 	const fileNames = fs.readdirSync(dir);
 	var data = "[";
 	var i = 0;
+	console.log("Files joined:");
 	fileNames.forEach(fileName => {
 		console.log(fileName);
 		// Process JSON file only if it's not zero length
