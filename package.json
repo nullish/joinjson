@@ -1,0 +1,19 @@
+{
+  "name": "joinjson",
+  "version": "1.0.0",
+  "description": "Join a set of JSON files into a single JSON file. Each individual file is an object.",
+  "main": "joinjson.js",
+  "name": "xml-parse-from-string",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nullish/joinjson.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "json"
+  ],
+  "author": "Nullish",
+  "license": "GNU"
+}
