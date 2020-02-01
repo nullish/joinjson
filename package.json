@@ -1,5 +1,5 @@
 {
-  "name": "joinjson",
+  "name": "@nullish/joinjson",
   "version": "1.0.0",
   "description": "Node script to join a set of JSON files into a single JSON file. Each individual file is an object.",
   "main": "joinjson.js",
