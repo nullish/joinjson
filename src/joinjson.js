@@ -15,11 +15,12 @@ function getDataFromFiles(dir) {
 	var i = 0;
 	console.log("Files joined:");
 	fileNames.forEach(fileName => {
-		console.log(fileName);
+		
 		// Process JSON file only if it's not zero length
 		var stats = fs.statSync(`${dir}${fileName}`);
 		var fSize = stats["size"];
-		if (fSize > 0) {
+		if (fSize > 0 && fileName.match(/\.json$/g)) {
+			console.log(fileName);
 			var fileContents = JSON.parse(fs.readFileSync(`${dir}${fileName}`));
 			var jString = JSON.stringify(fileContents);
 			var jObj = `${jString},`;
