@@ -1,4 +1,2 @@
 // make joinjson available at the root
-const joinjson  = require('./src/joinjson')
-joinjson()
-
+module.exports = require('./src/joinjson')
