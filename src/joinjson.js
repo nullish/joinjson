@@ -1,11 +1,20 @@
 const fs = require('fs')
 const path = require('path')
 
+/* **
+	* @param {string} dir - directory of JSON files
+	* @param {boolean} writeout - TRUE if output should be written to a file.
+
+*/
 const joinjson = (...args) => {
-	// Receives local file system directory as arg
+	// Joins multiple JSON files into a single JSON fomrat string. Optionally written to a file.
 	const dir = args[0] || process.argv[2]
 	const rawData = getDataFromFiles(dir);
-	writeFile(dir, rawData);
+	// Act on argument to suppress file output
+	if (args[1]) {
+		writeFile(dir, rawData);
+	}
+	return JSON.parse(rawData);
 }
 
 function getDataFromFiles(dir) {
