@@ -14,5 +14,8 @@
     "json"
   ],
   "author": "Nullish",
-  "license": "GNU"
+  "license": "GNU",
+  "dependencies": {
+    "yargs": "^15.4.1"
+  }
 }
