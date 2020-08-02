@@ -15,7 +15,5 @@
   ],
   "author": "Nullish",
   "license": "MIT-0",
-  "dependencies": {
-    "yargs": "^15.4.1"
-  }
+  "dependencies": {}
 }
