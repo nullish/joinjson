@@ -1,2 +1,1 @@
-const joinjson = require('./src/joinjson');
-//joinjson();
+module.exports = require('./src/joinjson');
