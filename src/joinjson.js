@@ -11,7 +11,7 @@ const joinjson = (...args) => {
 	const dir = args[0] || process.argv[2]
 	const rawData = getDataFromFiles(dir);
 	// Act on argument to suppress file output
-	if (args[1]) {
+	if (args[1] || process.argv[2]) {
 		writeFile(dir, rawData);
 	}
 	return JSON.parse(rawData);
