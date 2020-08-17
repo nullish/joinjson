@@ -11,7 +11,7 @@ const joinjson = (...args) => {
 	const dir = args[0] || process.argv[2]
 	const rawData = getDataFromFiles(dir);
 	// Act on argument to suppress file output
-	if (args[1] || process.argv[2]) {
+	if (args[1] !== "no-file") {
 		writeFile(dir, rawData);
 	}
 	return JSON.parse(rawData);
@@ -22,14 +22,14 @@ function getDataFromFiles(dir) {
 	const fileNames = fs.readdirSync(dir);
 	var data = "[";
 	var i = 0;
-	console.log("Files joined:");
+	//console.log("Files joined:");
 	fileNames.forEach(fileName => {
 		
 		// Process JSON file only if it's not zero length
 		var stats = fs.statSync(`${dir}${fileName}`);
 		var fSize = stats["size"];
 		if (fSize > 0 && fileName.match(/\.json$/g)) {
-			console.log(fileName);
+			//console.log(fileName);
 			var fileContents = JSON.parse(fs.readFileSync(`${dir}${fileName}`));
 			var jString = JSON.stringify(fileContents);
 			var jObj = `${jString},`;
