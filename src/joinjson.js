@@ -46,6 +46,9 @@ function writeFile (dir, manifest) {
 	// Receives a string and writes it to file in local file system
 	const fileName = 'manifest.json'
 	const filePath = path.join(dir, fileName)
+	/* if (fs.existsSync(filePath)) {
+		fs.unlinkSync(filePath);
+	};*/
 	fs.writeFileSync(filePath, manifest)
 }
 
