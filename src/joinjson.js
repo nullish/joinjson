@@ -28,7 +28,7 @@ function getDataFromFiles(dir) {
 		// Process JSON file only if it's not zero length
 		var stats = fs.statSync(`${dir}${fileName}`);
 		var fSize = stats["size"];
-		if (fSize > 0 && fileName.match(/\.json$/g)) {
+		if (fSize > 0 && fileName.match(/^wdio.*?\.json/)) {
 			//console.log(fileName);
 			var fileContents = JSON.parse(fs.readFileSync(`${dir}${fileName}`));
 			var jString = JSON.stringify(fileContents);
@@ -46,9 +46,6 @@ function writeFile (dir, manifest) {
 	// Receives a string and writes it to file in local file system
 	const fileName = 'manifest.json'
 	const filePath = path.join(dir, fileName)
-	if (fs.existsSync(filePath)) {
-		fs.unlinkSync(filePath);
-	};
 	fs.writeFileSync(filePath, manifest)
 }
 
